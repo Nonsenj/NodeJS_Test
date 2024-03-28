@@ -23,6 +23,7 @@ module.exports = app => {
 
                 lastAuthentication: Date.now()
             })
+
             await newAccount.save();
 
             res.send(newAccount);
@@ -40,6 +41,22 @@ module.exports = app => {
         }
 
         res.send("Invalid credentials");
+        return;
+    })
+
+
+    app.post('/account', async (req, res) => {
+        var data = req.body
+
+        var newAccount = new Account({
+            username: data.rUsername,
+            password: data.rPassword,
+
+            lastAuthentication: Date.now()
+        })
+
+        await newAccount.save();
+        res.send(newAccount);
         return;
     })
     

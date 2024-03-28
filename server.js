@@ -2,6 +2,7 @@ const express = require('express');
 const keys = require('./config/keys.js');
 
 const app = express();
+app.use(express.json());
 const port = 3000;
 
 // Setting up DB
@@ -17,8 +18,4 @@ require('./routes/authenticationRoutes')(app);
 
 app.listen(port, () => {
     console.log("Listening on " + keys.port);
-})
-
-app.post('/account', (req, res) => {
-    res.send('POST ')
 })
