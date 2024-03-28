@@ -1,7 +1,12 @@
 const express = require('express');
+const keys = require('./config/keys.js');
 
 const app = express();
 const port = 3000;
+
+const mongoose = require('mongoose');
+
+mongoose.connect(keys.mongoURI);
 
 //Routes
 app.get('/auth', async (req,res) => {
@@ -10,5 +15,5 @@ app.get('/auth', async (req,res) => {
 })
 
 app.listen(port, () => {
-    console.log("Listening on " + port);
+    console.log("Listening on " + keys.port);
 })
