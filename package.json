@@ -4,6 +4,8 @@
   "description": "Backend for the Login Project",
   "main": "index.js",
   "scripts": {
+    "dev": "npx nodemon server.js",
+    "production": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nonse",
@@ -12,5 +14,8 @@
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
